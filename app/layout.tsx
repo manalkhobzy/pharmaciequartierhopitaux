@@ -11,6 +11,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pharmaciequartierhopitaux.com"),
+  verification: {
+    google: "h75h7Z_86qtL5ZsinTWGj8xG4QRSrTQ0Jlmbg-rWJcI",
+  },
   title: {
     default: "Pharmacie Quartier des Hôpitaux — Casablanca",
     template: "%s | Pharmacie Quartier des Hôpitaux",

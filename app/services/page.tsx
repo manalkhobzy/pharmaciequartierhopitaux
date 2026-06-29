@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: "Nos Services",
+  description:
+    "Parapharmacie, préparations magistrales, phytothérapie, aromathérapie et homéopathie à la Pharmacie Quartier des Hôpitaux — 279 Bd Abdelmoumen, Casablanca.",
+}
 
 const SERVICES = [
   {
