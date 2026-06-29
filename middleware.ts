@@ -25,20 +25,45 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  const pathname = request.nextUrl.pathname
+  const isAdminRoute = pathname.startsWith('/admin')
+  const isMaintenancePage = pathname === '/maintenance'
 
-  const isAdminRoute = request.nextUrl.pathname.startsWith('/admin')
-  const isLoginPage = request.nextUrl.pathname === '/admin/login'
+  // Routes admin : vérification auth uniquement
+  if (isAdminRoute) {
+    const { data: { user } } = await supabase.auth.getUser()
+    const isLoginPage = pathname === '/admin/login'
 
-  if (isAdminRoute && !isLoginPage && !user) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/admin/login'
-    return NextResponse.redirect(url)
+    if (!isLoginPage && !user) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/admin/login'
+      return NextResponse.redirect(url)
+    }
+
+    if (isLoginPage && user) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/admin'
+      return NextResponse.redirect(url)
+    }
+
+    return supabaseResponse
   }
 
-  if (isLoginPage && user) {
+  // Page maintenance : pas de vérification (évite la boucle de redirection)
+  if (isMaintenancePage) {
+    return supabaseResponse
+  }
+
+  // Toutes les autres routes : vérifier le mode maintenance
+  const { data: setting } = await supabase
+    .from('settings')
+    .select('value')
+    .eq('key', 'maintenance_mode')
+    .single()
+
+  if (setting?.value === 'true') {
     const url = request.nextUrl.clone()
-    url.pathname = '/admin'
+    url.pathname = '/maintenance'
     return NextResponse.redirect(url)
   }
 
@@ -46,5 +71,7 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)',
+  ],
 }
