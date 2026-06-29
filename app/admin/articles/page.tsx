@@ -61,12 +61,12 @@ export default async function ArticlesListPage() {
                 return (
                   <tr key={article.id} className="hover:bg-gray-50/50 transition-colors group">
                     {/* Titre */}
-                    <td className="px-4 py-3.5">
-                      <div className="flex items-center gap-2">
+                    <td className="px-4 py-3.5 max-w-0 w-full">
+                      <div className="flex items-center gap-2 min-w-0">
                         {isConseil && (
                           <Star size={13} className="text-amber-400 fill-amber-400 shrink-0" />
                         )}
-                        <span className="text-sm font-medium text-gray-900 line-clamp-1">{article.title}</span>
+                        <span className="text-sm font-medium text-gray-900 truncate">{article.title}</span>
                       </div>
                     </td>
 
@@ -132,7 +132,7 @@ export default async function ArticlesListPage() {
                           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-600 hover:bg-primary/10 hover:text-primary transition-colors"
                         >
                           <Pencil size={12} />
-                          Modifier
+                          <span className="hidden sm:inline">Modifier</span>
                         </Link>
                         <DeleteConfirmButton
                           formAction={deleteArticleAction}

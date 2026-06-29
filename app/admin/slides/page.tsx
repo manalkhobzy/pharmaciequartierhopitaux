@@ -101,14 +101,14 @@ export default async function SlidesListPage() {
                   </td>
 
                   {/* Aperçu couleur + titre */}
-                  <td className="px-4 py-3">
-                    <div className="flex items-center gap-3">
+                  <td className="px-4 py-3 max-w-0 w-full">
+                    <div className="flex items-center gap-3 min-w-0">
                       <div
                         className="w-10 h-10 rounded-lg shrink-0 border border-white shadow-sm"
                         style={{ background: slide.bg_gradient }}
                       />
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 line-clamp-1">{slide.title}</p>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate">{slide.title}</p>
                         <p className="text-xs text-gray-400 mt-0.5">
                           {THEME_LABELS[slide.accent_color] ?? slide.accent_color}
                         </p>
@@ -150,7 +150,7 @@ export default async function SlidesListPage() {
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-600 hover:bg-primary/10 hover:text-primary transition-colors"
                       >
                         <Pencil size={12} />
-                        Modifier
+                        <span className="hidden sm:inline">Modifier</span>
                       </Link>
                       <DeleteConfirmButton
                         formAction={deleteSlideAction}

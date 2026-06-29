@@ -1,5 +1,7 @@
 'use client'
 
+import { Trash2 } from 'lucide-react'
+
 interface Props {
   formAction: (formData: FormData) => Promise<void>
   id: string
@@ -12,12 +14,13 @@ export default function DeleteConfirmButton({ formAction, id, message = 'Supprim
       <input type="hidden" name="id" value={id} />
       <button
         type="submit"
-        className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors"
         onClick={(e) => {
           if (!confirm(message)) e.preventDefault()
         }}
       >
-        Supprimer
+        <Trash2 size={12} />
+        <span className="hidden sm:inline">Supprimer</span>
       </button>
     </form>
   )
