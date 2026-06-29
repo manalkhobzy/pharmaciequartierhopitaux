@@ -18,7 +18,7 @@ function buildUrl(page: number, cat: string, q: string) {
   if (q) p.set("q", q)
   if (page > 1) p.set("page", String(page))
   const qs = p.toString()
-  return `/actualites${qs ? "?" + qs : ""}`
+  return `/actualites-et-conseils${qs ? "?" + qs : ""}`
 }
 
 export default async function ActualitesPage({
@@ -65,7 +65,7 @@ export default async function ActualitesPage({
             <span className="text-gray-300">/</span>
             <span className="text-text-dark font-medium">Actualités</span>
           </nav>
-          <form action="/actualites" method="get" className="relative">
+          <form action="/actualites-et-conseils" method="get" className="relative">
             {selectedCat && (
               <input type="hidden" name="categorie" value={selectedCat} />
             )}
@@ -123,7 +123,7 @@ export default async function ActualitesPage({
               {paginated.map((article) => (
                 <Link
                   key={article.slug}
-                  href={`/actualites/${article.slug}`}
+                  href={`/actualites-et-conseils/${article.slug}`}
                   className="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 shrink-0">

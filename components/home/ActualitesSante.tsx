@@ -24,7 +24,7 @@ export default function ActualitesSante({ articles }: Props) {
             </h2>
           </div>
           <Link
-            href="/actualites"
+            href="/actualites-et-conseils"
             className="flex items-center gap-2 text-primary-600 font-semibold hover:gap-3 transition-all text-sm"
           >
             Voir tous nos conseils
@@ -42,7 +42,7 @@ export default function ActualitesSante({ articles }: Props) {
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
               <Link
-                href={`/actualites/${article.slug}`}
+                href={`/actualites-et-conseils/${article.slug}`}
                 className="group flex flex-col h-full bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 <div className="relative aspect-video overflow-hidden">

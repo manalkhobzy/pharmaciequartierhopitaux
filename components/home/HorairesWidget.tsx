@@ -72,7 +72,7 @@ export default function HorairesWidget() {
 
       <div className="px-5 py-4 border-t border-gray-100">
         <Link
-          href="/contact"
+          href="/nous-contacter"
           className="flex items-center justify-center gap-2 w-full bg-primary-500 text-white font-semibold py-2.5 rounded-xl hover:bg-primary-600 transition-colors text-sm"
         >
           <Phone className="w-4 h-4" />

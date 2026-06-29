@@ -26,7 +26,7 @@ export default function ConseilDuMois({ article }: Props) {
             </p>
           </div>
           <Link
-            href={`/actualites/${article.slug}`}
+            href={`/actualites-et-conseils/${article.slug}`}
             className="flex-shrink-0 flex items-center gap-2 bg-white text-primary font-semibold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors text-sm whitespace-nowrap"
           >
             Lire la suite

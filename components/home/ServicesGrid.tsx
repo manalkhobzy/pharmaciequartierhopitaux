@@ -47,7 +47,7 @@ export default function ServicesGrid() {
               transition={{ duration: 0.35, delay: i * 0.04 }}
             >
               <Link
-                href={`/services#${service.id}`}
+                href={`/nos-services#${service.id}`}
                 className="group flex flex-col gap-4 bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
@@ -64,7 +64,7 @@ export default function ServicesGrid() {
 
         <div className="text-center mt-10">
           <Link
-            href="/services"
+            href="/nos-services"
             className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-600 transition-colors"
           >
             Voir tous nos services

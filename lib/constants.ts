@@ -97,8 +97,8 @@ export const SERVICES = [
 export const NAV_LINKS = [
   { href: "/", label: "Accueil" },
   { href: "/notre-pharmacie", label: "Notre pharmacie" },
-  { href: "/services", label: "Services" },
-  { href: "/actualites", label: "Actualités et conseils" },
+  { href: "/nos-services", label: "Nos services" },
+  { href: "/actualites-et-conseils", label: "Actualités et conseils" },
   { href: "/ordonnance", label: "Ordonnance" },
-  { href: "/contact", label: "Contact" },
+  { href: "/nous-contacter", label: "Nous contacter" },
 ] as const

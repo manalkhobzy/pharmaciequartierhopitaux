@@ -18,14 +18,14 @@ const slides = [
   {
     title: "Parapharmacie\nen libre accès",
     subtitle: "Soins, cosmétiques et compléments alimentaires sélectionnés par nos pharmaciens.",
-    cta: { label: "Découvrir nos services", href: "/services", external: false },
+    cta: { label: "Découvrir nos services", href: "/nos-services", external: false },
     image_url: "/images/hero/parapharmacie.webp",
     image_alt: "Rayon parapharmacie",
   },
   {
     title: "Préparations\nmagistrales",
     subtitle: "Formules personnalisées préparées sur mesure dans notre officine pour chaque patient.",
-    cta: { label: "En savoir plus", href: "/services", external: false },
+    cta: { label: "En savoir plus", href: "/nos-services", external: false },
     image_url: "/images/hero/preparations.webp",
     image_alt: "Préparations magistrales",
   },
@@ -107,7 +107,7 @@ export default function HeroBanner() {
                   </Link>
                 )}
                 <Link
-                  href="/services"
+                  href="/nos-services"
                   className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-white/20 transition-all"
                 >
                   Nos services

@@ -6,10 +6,10 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: "Envoi d'ordonnance", href: '/ordonnance', highlight: true },
-  { label: 'Nos services', href: '/services' },
+  { label: 'Nos services', href: '/nos-services' },
   { label: 'Notre pharmacie', href: '/notre-pharmacie' },
-  { label: 'Actualités et conseils', href: '/actualites' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Actualités et conseils', href: '/actualites-et-conseils' },
+  { label: 'Nous contacter', href: '/nous-contacter' },
 ]
 
 export default function Header() {

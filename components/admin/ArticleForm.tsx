@@ -128,7 +128,7 @@ export default function ArticleForm({ article, action, submitLabel }: ArticleFor
               </label>
               <div className="flex gap-2">
                 <span className="flex items-center px-3 text-xs text-gray-400 bg-gray-50 border border-r-0 border-gray-200 rounded-l-xl">
-                  /actualites/
+                  /actualites-et-conseils/
                 </span>
                 <input
                   name="slug"
@@ -205,7 +205,7 @@ export default function ArticleForm({ article, action, submitLabel }: ArticleFor
 
             {article && (
               <a
-                href={`/actualites/${article.slug}`}
+                href={`/actualites-et-conseils/${article.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 w-full flex items-center justify-center gap-2 text-gray-500 text-xs font-medium py-2 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"

@@ -48,10 +48,10 @@ export default function Footer() {
             {[
               { label: 'Accueil', href: '/' },
               { label: 'Notre pharmacie', href: '/notre-pharmacie' },
-              { label: 'Services', href: '/services' },
-              { label: 'Actualités et conseils', href: '/actualites' },
+              { label: 'Nos services', href: '/nos-services' },
+              { label: 'Actualités et conseils', href: '/actualites-et-conseils' },
               { label: 'Ordonnance', href: '/ordonnance' },
-              { label: 'Contact', href: '/contact' },
+              { label: 'Nous contacter', href: '/nous-contacter' },
             ].map(item => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-white transition-colors text-xs">{item.label}</Link>
@@ -72,7 +72,7 @@ export default function Footer() {
               'Vaccination',
             ].map(s => (
               <li key={s}>
-                <Link href="/services" className="hover:text-white transition-colors text-xs">{s}</Link>
+                <Link href="/nos-services" className="hover:text-white transition-colors text-xs">{s}</Link>
               </li>
             ))}
           </ul>

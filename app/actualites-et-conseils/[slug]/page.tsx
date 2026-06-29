@@ -65,7 +65,7 @@ export default async function ArticlePage({
           <nav className="flex items-center gap-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-primary transition-colors">Accueil</Link>
             <span className="text-gray-300">/</span>
-            <Link href="/actualites" className="hover:text-primary transition-colors">Actualités et conseils</Link>
+            <Link href="/actualites-et-conseils" className="hover:text-primary transition-colors">Actualités et conseils</Link>
             <span className="text-gray-300">/</span>
             <span className="text-primary font-medium line-clamp-1">{article.title}</span>
           </nav>
@@ -112,7 +112,7 @@ export default async function ArticlePage({
             />
             <div className="mt-12 pt-8 border-t border-gray-100">
               <Link
-                href="/actualites"
+                href="/actualites-et-conseils"
                 className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
               >
                 <ArrowLeft size={16} />
@@ -146,7 +146,7 @@ export default async function ArticlePage({
                   {related.map((a) => (
                     <Link
                       key={a.slug}
-                      href={`/actualites/${a.slug}`}
+                      href={`/actualites-et-conseils/${a.slug}`}
                       className="flex flex-col gap-1 p-4 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-primary-50 transition-colors"
                     >
                       <span className="text-xs text-primary font-medium">{a.category}</span>

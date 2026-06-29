@@ -20,10 +20,10 @@ const HORAIRES = [
 
 const SERVICES: { label: string; description: string; Icon: LucideIcon; iconBg: string; iconColor: string; href: string }[] = [
   { label: "Envoi d'ordonnance", description: 'Photo WhatsApp · prête en 1h', Icon: FileText, iconBg: '#E8F5EE', iconColor: '#1B6B4A', href: '/ordonnance' },
-  { label: 'Parapharmacie', description: 'Dermo-cosmétique, hygiène, nutrition', Icon: ShoppingBag, iconBg: '#EFF6FF', iconColor: '#1565C0', href: '/services' },
-  { label: 'Préparations magistrales', description: 'Formules personnalisées sur mesure', Icon: FlaskConical, iconBg: '#F5F3FF', iconColor: '#7C3AED', href: '/services' },
-  { label: 'Phytothérapie', description: 'Plantes médicinales & remèdes naturels', Icon: Leaf, iconBg: '#F0FDF4', iconColor: '#16A34A', href: '/services' },
-  { label: 'Aromathérapie', description: 'Huiles essentielles & bien-être', Icon: Droplets, iconBg: '#FFF7ED', iconColor: '#EA580C', href: '/services' },
+  { label: 'Parapharmacie', description: 'Dermo-cosmétique, hygiène, nutrition', Icon: ShoppingBag, iconBg: '#EFF6FF', iconColor: '#1565C0', href: '/nos-services' },
+  { label: 'Préparations magistrales', description: 'Formules personnalisées sur mesure', Icon: FlaskConical, iconBg: '#F5F3FF', iconColor: '#7C3AED', href: '/nos-services' },
+  { label: 'Phytothérapie', description: 'Plantes médicinales & remèdes naturels', Icon: Leaf, iconBg: '#F0FDF4', iconColor: '#16A34A', href: '/nos-services' },
+  { label: 'Aromathérapie', description: 'Huiles essentielles & bien-être', Icon: Droplets, iconBg: '#FFF7ED', iconColor: '#EA580C', href: '/nos-services' },
 ]
 
 // ─── COMPOSANTS SERVEUR ──────────────────────────────────────────────────────
@@ -138,14 +138,14 @@ function ConseilsActualites({ conseil, categories }: { conseil: Article | null; 
                   {conseil.excerpt}
                 </p>
                 <div className="flex items-center gap-4">
-                  <Link href={`/actualites/${conseil.slug}`} className="btn-navy">LIRE LA SUITE</Link>
-                  <Link href="/actualites" className="text-navy text-sm hover:underline">Voir tous les conseils</Link>
+                  <Link href={`/actualites-et-conseils/${conseil.slug}`} className="btn-navy">LIRE LA SUITE</Link>
+                  <Link href="/actualites-et-conseils" className="text-navy text-sm hover:underline">Voir tous les conseils</Link>
                 </div>
               </>
             ) : (
               <>
                 <p className="text-gray-400 text-sm mb-5 italic">Aucun conseil du mois sélectionné pour le moment.</p>
-                <Link href="/actualites" className="text-navy text-sm hover:underline">Voir tous les conseils →</Link>
+                <Link href="/actualites-et-conseils" className="text-navy text-sm hover:underline">Voir tous les conseils →</Link>
               </>
             )}
           </div>
@@ -167,7 +167,7 @@ function ConseilsActualites({ conseil, categories }: { conseil: Article | null; 
         <div>
           <div className="flex items-center justify-between mb-4">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400">ACTUALITÉS SANTÉ</p>
-            <Link href="/actualites" className="text-navy text-sm hover:underline">Voir toutes les actus</Link>
+            <Link href="/actualites-et-conseils" className="text-navy text-sm hover:underline">Voir toutes les actus</Link>
           </div>
           <div className="grid grid-cols-2 gap-3">
             {categories.slice(0, 4).map((cat) => {
@@ -175,7 +175,7 @@ function ConseilsActualites({ conseil, categories }: { conseil: Article | null; 
               return (
                 <Link
                   key={cat}
-                  href={`/actualites?categorie=${encodeURIComponent(cat)}`}
+                  href={`/actualites-et-conseils?categorie=${encodeURIComponent(cat)}`}
                   className="rounded-xl p-4 flex flex-col gap-3 min-h-24 hover:brightness-95 transition-all"
                   style={{ backgroundColor: bg }}
                 >
