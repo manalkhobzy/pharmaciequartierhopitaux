@@ -61,7 +61,7 @@ export default function TiptapEditor({ content, onChange }: TiptapEditorProps) {
 
   useEffect(() => {
     if (editor && content !== editor.getHTML()) {
-      editor.commands.setContent(content, false)
+      editor.commands.setContent(content, { emitUpdate: false })
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content])
