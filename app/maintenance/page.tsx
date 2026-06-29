@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Cross, Phone, MessageCircle, Wrench } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, MessageCircle, Wrench } from 'lucide-react'
 import { PHARMACIE } from '@/lib/constants'
 
 export const metadata: Metadata = {
@@ -11,17 +12,18 @@ export default function MaintenancePage() {
   const waMsg = encodeURIComponent('Bonjour, je vous contacte depuis le site.')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-emerald-50 flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#2a3240] via-[#1e2630] to-[#2a3240] flex flex-col items-center justify-center p-6">
 
       {/* Logo */}
-      <div className="flex items-center gap-3 mb-10">
-        <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-          <Cross size={22} className="text-white" strokeWidth={2.5} />
-        </div>
-        <div>
-          <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Pharmacie</p>
-          <p className="text-sm font-bold text-gray-900 leading-tight">Quartier des Hôpitaux</p>
-        </div>
+      <div className="mb-10">
+        <Image
+          src="/images/logo.webp"
+          alt="Pharmacie & Para Quartier des Hôpitaux"
+          width={280}
+          height={80}
+          className="h-16 w-auto"
+          priority
+        />
       </div>
 
       {/* Card principale */}
@@ -83,8 +85,7 @@ export default function MaintenancePage() {
 
       {/* Footer */}
       <div className="mt-8 text-center space-y-1">
-        <p className="text-xs text-gray-400">{PHARMACIE.adresseShort}</p>
-        <p className="text-xs text-gray-300">Dr Manal Sordo · {PHARMACIE.slogan}</p>
+        <p className="text-xs text-white/40">{PHARMACIE.adresseShort}</p>
       </div>
 
     </div>
