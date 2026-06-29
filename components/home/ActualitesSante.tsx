@@ -47,7 +47,7 @@ export default function ActualitesSante({ articles }: Props) {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
-                    src={article.image ?? '/images/article-placeholder.webp'}
+                    src={article.image_url ?? '/images/article-placeholder.webp'}
                     fill
                     className="object-cover"
                     alt={article.title}
@@ -67,13 +67,13 @@ export default function ActualitesSante({ articles }: Props) {
                   <div className="flex items-center gap-4 text-xs text-gray-400">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
-                      {new Date(article.date).toLocaleDateString("fr-FR", {
+                      {new Date(article.published_at ?? article.created_at).toLocaleDateString("fr-FR", {
                         day: "numeric", month: "long", year: "numeric",
                       })}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
-                      {article.readTime}
+                      {article.read_time}
                     </span>
                   </div>
                 </div>

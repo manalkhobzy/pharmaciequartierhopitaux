@@ -12,22 +12,22 @@ const slides = [
     title: "Votre ordonnance\nprête en 1h",
     subtitle: "Envoyez votre ordonnance par WhatsApp et venez récupérer vos médicaments en toute simplicité.",
     cta: { label: "Envoyer mon ordonnance", href: `https://wa.me/${PHARMACIE.whatsapp}?text=${PHARMACIE.whatsappOrdonnanceMsg}`, external: true },
-    image: "/images/hero/ordonnance.webp",
-    imageAlt: "Service ordonnance WhatsApp",
+    image_url: "/images/hero/ordonnance.webp",
+    image_alt: "Service ordonnance WhatsApp",
   },
   {
     title: "Parapharmacie\nen libre accès",
     subtitle: "Soins, cosmétiques et compléments alimentaires sélectionnés par nos pharmaciens.",
     cta: { label: "Découvrir nos services", href: "/services", external: false },
-    image: "/images/hero/parapharmacie.webp",
-    imageAlt: "Rayon parapharmacie",
+    image_url: "/images/hero/parapharmacie.webp",
+    image_alt: "Rayon parapharmacie",
   },
   {
     title: "Préparations\nmagistrales",
     subtitle: "Formules personnalisées préparées sur mesure dans notre officine pour chaque patient.",
     cta: { label: "En savoir plus", href: "/services", external: false },
-    image: "/images/hero/preparations.webp",
-    imageAlt: "Préparations magistrales",
+    image_url: "/images/hero/preparations.webp",
+    image_alt: "Préparations magistrales",
   },
 ]
 
@@ -151,8 +151,8 @@ export default function HeroBanner() {
             >
               {!imageErrors[current] ? (
                 <Image
-                  src={slide.image}
-                  alt={slide.imageAlt}
+                  src={slide.image_url}
+                  alt={slide.image_alt}
                   fill
                   className="object-cover"
                   onError={() => setImageErrors(prev => ({ ...prev, [current]: true }))}
@@ -168,7 +168,7 @@ export default function HeroBanner() {
                   </div>
                   <p className="text-white/60 text-sm text-center px-4">
                     Ajouter une image dans<br />
-                    <code className="text-white/80 text-xs">{slide.image}</code>
+                    <code className="text-white/80 text-xs">{slide.image_url}</code>
                   </p>
                 </div>
               )}
