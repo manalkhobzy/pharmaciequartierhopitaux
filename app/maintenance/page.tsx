@@ -21,7 +21,7 @@ export default function MaintenancePage() {
           alt="Pharmacie & Para Quartier des Hôpitaux"
           width={280}
           height={80}
-          className="h-16 w-auto"
+          className="h-16 w-auto rounded-2xl"
           priority
         />
       </div>
