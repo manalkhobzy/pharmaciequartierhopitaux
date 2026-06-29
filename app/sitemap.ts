@@ -3,8 +3,8 @@ import { getAllArticles } from "@/lib/articles"
 
 const BASE_URL = "https://pharmaciequartierhopitaux.com"
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const articles = getAllArticles()
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const articles = await getAllArticles()
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
