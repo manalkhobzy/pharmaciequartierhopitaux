@@ -31,32 +31,32 @@ const SERVICES: { label: string; description: string; Icon: LucideIcon; iconBg: 
 function InfoBar() {
   return (
     <div className="bg-navy text-white">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
-        <div className="flex items-center gap-4 px-6 py-4">
-          <svg className="w-8 h-8 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 grid grid-cols-3 divide-x divide-white/20">
+        <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 sm:gap-4 px-2 sm:px-6 py-4">
+          <svg className="w-5 h-5 sm:w-8 sm:h-8 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div>
-            <p className="font-bold text-sm uppercase tracking-wide">PRÉPARATION</p>
-            <p className="text-white/70 text-sm">de vos ordonnances en 1h</p>
+            <p className="font-bold text-[10px] sm:text-sm uppercase tracking-wide">PRÉPARATION</p>
+            <p className="text-white/70 text-[10px] sm:text-sm">de vos ordonnances en 1h</p>
           </div>
         </div>
-        <div className="flex items-center gap-4 px-6 py-4">
-          <svg className="w-8 h-8 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 sm:gap-4 px-2 sm:px-6 py-4">
+          <svg className="w-5 h-5 sm:w-8 sm:h-8 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
           <div>
-            <p className="font-bold text-sm uppercase tracking-wide">BESOIN D&apos;AIDE ?</p>
-            <p className="text-white/70 text-sm">Contactez-nous !</p>
+            <p className="font-bold text-[10px] sm:text-sm uppercase tracking-wide">BESOIN D&apos;AIDE ?</p>
+            <p className="text-white/70 text-[10px] sm:text-sm">Contactez-nous !</p>
           </div>
         </div>
-        <div className="flex items-center gap-4 px-6 py-4">
-          <svg className="w-8 h-8 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex flex-col items-start sm:flex-row sm:items-center gap-1 sm:gap-4 px-2 sm:px-6 py-4">
+          <svg className="w-5 h-5 sm:w-8 sm:h-8 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
           <div>
-            <p className="font-bold text-sm uppercase tracking-wide">WHATSAPP</p>
-            <p className="text-white/70 text-sm">Ordonnance · 06 53 46 87 85</p>
+            <p className="font-bold text-[10px] sm:text-sm uppercase tracking-wide">WHATSAPP</p>
+            <p className="text-white/70 text-[10px] sm:text-sm">Ordonnance · 06 53 46 87 85</p>
           </div>
         </div>
       </div>
@@ -67,17 +67,16 @@ function InfoBar() {
 function WelcomeSection() {
   const today = new Date().getDay()
   return (
-    <section className="py-12 bg-white">
+    <section className="pt-6 pb-12 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Bienvenue dans notre pharmacie</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="rounded-lg overflow-hidden">
             <Image src="/images/pharmacie.webp" alt="Pharmacie Quartier des Hôpitaux — Casablanca" width={600} height={400} className="w-full h-auto" />
           </div>
-          <div className="text-gray-700 text-sm leading-relaxed space-y-3">
+          <div className="text-gray-700 text-sm leading-relaxed space-y-3 text-justify">
             <p className="font-bold text-gray-900">Bienvenue à la Pharmacie Quartier des Hôpitaux !</p>
             <p>Idéalement située au 279 Boulevard Abdelmoumen à Casablanca et proche des transports en commun (Arrêt Abd El Moumen Tram T1, T2), la Dr Manal Sordo et son équipe vous accueillent non-stop du lundi au vendredi de 9h00 à 20h00 et le samedi jusqu&apos;à 13h30.</p>
-            <p>Conseils personnalisés, parapharmacie en libre accès, phytothérapie, aromathérapie, préparations magistrales...</p>
             <p>N&apos;hésitez pas à nous envoyer votre{' '}<Link href="/ordonnance" className="text-navy font-semibold underline">ordonnance par WhatsApp</Link>, ou à venir nous rendre visite.</p>
             <p className="font-semibold">À très bientôt !</p>
           </div>
@@ -124,43 +123,48 @@ function ConseilsActualites({ conseil, categories }: { conseil: Article | null; 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         {/* LE CONSEIL DU MOIS */}
-        <div className="border border-gray-200 rounded-lg p-6 flex gap-4">
-          {/* Texte */}
-          <div className="flex-1 min-w-0">
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">LE CONSEIL DU MOIS</p>
-            <div className="w-8 border-t-2 border-navy mb-4" />
-            {conseil ? (
-              <>
-                <h3 className="font-bold text-gray-900 text-base mb-3 leading-snug">
-                  {conseil.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5 line-clamp-3">
-                  {conseil.excerpt}
-                </p>
-                <div className="flex items-center gap-4">
-                  <Link href={`/actualites-et-conseils/${conseil.slug}`} className="btn-navy">LIRE LA SUITE</Link>
-                  <Link href="/actualites-et-conseils" className="text-navy text-sm hover:underline">Voir tous les conseils</Link>
-                </div>
-              </>
-            ) : (
-              <>
-                <p className="text-gray-400 text-sm mb-5 italic">Aucun conseil du mois sélectionné pour le moment.</p>
-                <Link href="/actualites-et-conseils" className="text-navy text-sm hover:underline">Voir tous les conseils →</Link>
-              </>
-            )}
-          </div>
-          {/* Image carrée */}
-          {conseil?.image_url && (
-            <div className="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden">
+        <div className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col">
+          {conseil?.image_url ? (
+            <div className="relative w-full aspect-[16/9]">
               <Image
                 src={conseil.image_url}
                 alt={conseil.title}
                 fill
-                sizes="112px"
-                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
+              <span className="absolute top-4 left-4 bg-navy text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                Conseil du mois
+              </span>
+            </div>
+          ) : (
+            <div className="w-full aspect-[16/9] bg-navy/5 flex items-center justify-center">
+              <span className="text-xs font-bold uppercase tracking-widest text-navy/40">Conseil du mois</span>
             </div>
           )}
+          <div className="p-6 flex flex-col flex-1">
+            {conseil ? (
+              <>
+                <h3 className="font-bold text-gray-900 text-lg mb-2 leading-snug">
+                  {conseil.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5 line-clamp-2 flex-1">
+                  {conseil.excerpt}
+                </p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-4 border-t border-gray-100">
+                  <Link href={`/actualites-et-conseils/${conseil.slug}`} className="btn-navy inline-flex items-center justify-center gap-1.5 shrink-0">
+                    Lire la suite <ChevronRight size={15} />
+                  </Link>
+                  <Link href="/actualites-et-conseils" className="text-navy text-sm font-medium hover:underline whitespace-nowrap">Tous les conseils</Link>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="text-gray-400 text-sm mb-5 italic flex-1">Aucun conseil du mois sélectionné pour le moment.</p>
+                <Link href="/actualites-et-conseils" className="text-navy text-sm font-medium hover:underline pt-4 border-t border-gray-100">Voir tous les conseils →</Link>
+              </>
+            )}
+          </div>
         </div>
 
         {/* ACTUALITÉS SANTÉ */}
@@ -203,23 +207,27 @@ function ClickCollect() {
   return (
     <section className="py-12 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-primary-50 rounded-2xl px-8 py-10 flex flex-col lg:flex-row items-center gap-10">
-          <div className="lg:w-2/5 shrink-0">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Service WhatsApp</p>
-            <h2 className="text-2xl font-bold text-gray-900 mb-3 leading-snug">Envoyez votre ordonnance,<br />récupérez-la prête en 1h</h2>
+        <div className="bg-primary-50 rounded-2xl px-6 sm:px-8 py-10 flex flex-col lg:flex-row items-center gap-10">
+          <div className="lg:w-2/5 shrink-0 text-center lg:text-left">
+            <span className="inline-flex items-center gap-1.5 bg-navy text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+              <MessageCircle size={12} /> Service WhatsApp
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 leading-snug">Envoyez votre ordonnance, récupérez-la prête en 1h</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">Photographiez votre ordonnance et envoyez-la sur WhatsApp. Notre équipe prépare vos médicaments et vous avertit dès que tout est prêt.</p>
-            <Link href="/ordonnance" className="btn-navy inline-flex items-center gap-2">En savoir plus<ChevronRight size={15} /></Link>
+            <Link href="/ordonnance" className="btn-navy inline-flex items-center justify-center gap-2 w-full sm:w-auto">En savoir plus<ChevronRight size={15} /></Link>
           </div>
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
             {steps.map(({ num, Icon, title, desc }) => (
-              <div key={num} className="bg-white rounded-xl p-5 shadow-sm flex flex-col gap-3">
-                <div className="flex items-center justify-between">
+              <div key={num} className="bg-white rounded-xl p-5 shadow-sm flex items-center sm:flex-col sm:items-start gap-4 sm:gap-3">
+                <div className="relative w-10 h-10 shrink-0">
                   <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
                     <Icon size={20} className="text-primary" strokeWidth={1.8} />
                   </div>
-                  <span className="text-2xl font-black text-gray-100 select-none">{num}</span>
+                  <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-navy text-white text-[10px] font-bold flex items-center justify-center border-2 border-white">
+                    {num}
+                  </span>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-gray-900 mb-0.5">{title}</p>
                   <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
                 </div>

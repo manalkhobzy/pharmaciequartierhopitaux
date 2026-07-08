@@ -44,7 +44,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
       style={{ height: '300px', background: slide.bg_gradient, transition: 'background 0.6s ease' }}
     >
       <div className="max-w-7xl mx-auto px-8 h-full flex items-center">
-        <div className="max-w-xl">
+        <div className="max-w-xl mx-auto text-center lg:mx-0 lg:text-left">
           <h1
             className="text-3xl lg:text-4xl font-bold mb-3 leading-tight"
             style={{ color: slide.accent_color }}
