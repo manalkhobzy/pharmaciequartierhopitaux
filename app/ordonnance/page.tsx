@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Ordonnance WhatsApp",
   description:
     "Envoyez votre ordonnance par WhatsApp et récupérez vos médicaments prêts en 1h. Service gratuit à la Pharmacie Quartier des Hôpitaux, Casablanca.",
+  alternates: {
+    canonical: "/ordonnance",
+  },
 }
 
 // ─── DONNÉES ─────────────────────────────────────────────────────────────────

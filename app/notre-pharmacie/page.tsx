@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Notre Pharmacie",
   description:
     "Découvrez la Pharmacie Quartier des Hôpitaux : 45 ans d'histoire, équipe à l'écoute, parapharmacie en libre accès. Dr Manal Sordo, 279 Bd Abdelmoumen, Casablanca.",
+  alternates: {
+    canonical: "/notre-pharmacie",
+  },
 }
 import { MapPin, Phone, Clock, MessageSquare, FlaskConical, Sparkles, Leaf, ShoppingBag, Smartphone, HeartHandshake, ShoppingCart, Package, Pill } from 'lucide-react'
 import AvisGoogle from '@/components/shared/AvisGoogle'

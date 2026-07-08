@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   verification: {
     google: "h75h7Z_86qtL5ZsinTWGj8xG4QRSrTQ0Jlmbg-rWJcI",
   },
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Pharmacie Quartier des Hôpitaux — Casablanca",
     template: "%s | Pharmacie Quartier des Hôpitaux",

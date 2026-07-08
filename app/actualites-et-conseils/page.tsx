@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Actualités et conseils",
   description:
     "Articles santé, conseils bien-être et actualités médicales rédigés par l'équipe de la Pharmacie Quartier des Hôpitaux Casablanca.",
+  alternates: {
+    canonical: "/actualites-et-conseils",
+  },
 }
 
 function buildUrl(page: number, cat: string, q: string) {
