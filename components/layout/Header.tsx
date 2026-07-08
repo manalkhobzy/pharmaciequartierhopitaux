@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
@@ -34,18 +35,15 @@ export default function Header() {
           <div className="max-w-7xl mx-auto flex items-center justify-between">
 
             {/* LOGO */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-12 h-12 shrink-0">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-4 bg-pharmacy-green rounded-sm absolute" />
-                  <div className="w-4 h-12 bg-pharmacy-green rounded-sm absolute" />
-                </div>
-              </div>
-              <div>
-                <div className="font-bold text-navy text-lg leading-tight">Pharmacie & Parapharmacie</div>
-                <div className="font-bold text-navy text-lg leading-tight">Quartier des Hôpitaux</div>
-                <div className="text-gray-500 text-xs">Casablanca - 279 Bd Abdelmoumen</div>
-              </div>
+            <Link href="/" className="flex items-center gap-3 bg-navy rounded-lg px-3 py-2 shrink-0">
+              <Image
+                src="/images/logo.webp"
+                alt="Logo Pharmacie & Para Quartier des Hôpitaux"
+                width={200}
+                height={45}
+                className="h-10 w-auto object-contain"
+                priority
+              />
             </Link>
 
             {/* CONTACT RAPIDE — desktop */}
