@@ -12,7 +12,9 @@ export const metadata: Metadata = {
 }
 import { MapPin, Phone, Clock, MessageSquare, FlaskConical, Sparkles, Leaf, ShoppingBag, Smartphone, HeartHandshake, ShoppingCart, Package, Pill } from 'lucide-react'
 import AvisGoogle from '@/components/shared/AvisGoogle'
-import { PHARMACIE, EQUIPE } from '@/lib/constants'
+import { PHARMACIE } from '@/lib/constants'
+import { createClient } from '@/lib/supabase/server'
+import type { Membre } from '@/lib/supabase/types'
 
 const EXPERTISES = [
   { label: 'Aromathérapie',           icon: <Leaf        className="w-7 h-7 text-primary" /> },
@@ -44,7 +46,15 @@ function LeafDecor({ className }: { className?: string }) {
   )
 }
 
-export default function QuiSommesNousPage() {
+export default async function QuiSommesNousPage() {
+  const supabase = await createClient()
+  const { data: equipe } = await supabase
+    .from('equipe')
+    .select('*')
+    .eq('active', true)
+    .order('order_index', { ascending: true })
+  const membres = (equipe ?? []) as Membre[]
+
   return (
     <div className="bg-white">
 
@@ -142,12 +152,12 @@ export default function QuiSommesNousPage() {
             Notre équipe vous accueille et vous conseille du lundi au samedi.
           </p>
           <div className="flex flex-wrap justify-center gap-12">
-            {EQUIPE.map((membre) => (
+            {membres.map((membre) => (
               <div key={membre.id} className="flex flex-col items-center gap-3 w-52">
                 <div className="w-48 h-48 rounded-2xl overflow-hidden bg-gray-100 shadow-md">
-                  {membre.photo ? (
+                  {membre.photo_url ? (
                     <Image
-                      src={membre.photo}
+                      src={membre.photo_url}
                       width={224}
                       height={224}
                       className="w-full h-full object-cover"
@@ -164,7 +174,7 @@ export default function QuiSommesNousPage() {
                 </div>
                 <div>
                   <p className="font-bold text-gray-900 text-sm">{membre.nom}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{membre.titreLong}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{membre.titre_long}</p>
                 </div>
               </div>
             ))}

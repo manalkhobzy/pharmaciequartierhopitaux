@@ -34,3 +34,19 @@ export interface Slide {
 
 export type SlideInsert = Omit<Slide, 'id' | 'created_at' | 'updated_at'>
 export type SlideUpdate = Partial<SlideInsert>
+
+export interface Membre {
+  id: string
+  nom: string
+  titre: string
+  titre_long: string
+  description: string
+  photo_url: string | null
+  order_index: number
+  active: boolean
+  created_at: string
+  updated_at: string
+}
+
+export type MembreInsert = Omit<Membre, 'id' | 'created_at' | 'updated_at'>
+export type MembreUpdate = Partial<MembreInsert>

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { LayoutDashboard, FileText, PlusCircle, LogOut, Cross, Images, SlidersHorizontal, Menu, X } from 'lucide-react'
+import { LayoutDashboard, FileText, PlusCircle, LogOut, Cross, Images, SlidersHorizontal, Users, UserPlus, Menu, X } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 
 const SECTIONS = [
@@ -25,6 +25,13 @@ const SECTIONS = [
     items: [
       { href: '/admin/slides', label: 'Slider homepage', icon: Images, exact: false },
       { href: '/admin/slides/nouveau', label: 'Nouveau slide', icon: SlidersHorizontal, exact: true },
+    ],
+  },
+  {
+    label: 'Équipe',
+    items: [
+      { href: '/admin/equipe', label: 'Membres de l’équipe', icon: Users, exact: false },
+      { href: '/admin/equipe/nouveau', label: 'Nouveau membre', icon: UserPlus, exact: true },
     ],
   },
 ]

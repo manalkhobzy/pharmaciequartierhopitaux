@@ -88,64 +88,6 @@ export const SERVICES = [
   },
 ] as const
 
-export type MembreEquipe = {
-  id: string
-  nom: string
-  titre: string
-  titreLong: string
-  description: string
-  /** null = pas encore de portrait : l'initiale du prénom est affichée à la place */
-  photo: string | null
-}
-
-export const EQUIPE: MembreEquipe[] = [
-  {
-    id: "manal-khobzi-sordo",
-    nom: "Dr Manal Khobzi Sordo",
-    titre: "Docteur en Pharmacie",
-    titreLong: "Docteur en Pharmacie, Faculté de Pharmacie de Lille",
-    description:
-      "Diplômée de la Faculté de Pharmacie de Lille, la Dr Khobzi Sordo a exercé 2 ans en France avant de reprendre la Pharmacie Quartier des Hôpitaux. Spécialisée en dermatologie, phytothérapie et aromathérapie.",
-    photo: "/images/Manal.webp",
-  },
-  {
-    id: "asmae",
-    nom: "Asmae",
-    titre: "Pharmacienne assistante",
-    titreLong: "Pharmacienne assistante",
-    description:
-      "Pharmacienne assistante, Asmae vous accompagne à la délivrance de vos ordonnances et vous conseille sur vos traitements.",
-    photo: "/images/Asmae.webp",
-  },
-  {
-    id: "ilham",
-    nom: "Ilham",
-    titre: "Aide pharmacien",
-    titreLong: "Aide pharmacien, plus de 20 ans d'expérience",
-    description:
-      "Forte de plus de 20 ans d'expérience en officine, Ilham prépare vos ordonnances et vous oriente au quotidien.",
-    photo: "/images/Ilham.webp",
-  },
-  {
-    id: "nezha",
-    nom: "Nezha",
-    titre: "Aide pharmacien",
-    titreLong: "Aide pharmacien, de formation infirmière",
-    description:
-      "De formation infirmière, Nezha apporte un regard soignant à l'accueil et au suivi des patients de la pharmacie.",
-    photo: "/images/Nezha.webp",
-  },
-  {
-    id: "rayhab",
-    nom: "Rayhab",
-    titre: "Conseillère en dermo-cosmétique",
-    titreLong: "Conseillère en dermo-cosmétique et parapharmacie",
-    description:
-      "Rayhab vous guide dans le choix de vos soins : dermo-cosmétique, capillaire, hygiène et bien-être.",
-    photo: "/images/Rayhab.webp",
-  },
-]
-
 export const NAV_LINKS = [
   { href: "/", label: "Accueil" },
   { href: "/notre-pharmacie", label: "Notre pharmacie" },

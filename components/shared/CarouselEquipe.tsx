@@ -2,13 +2,18 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { EQUIPE } from '@/lib/constants'
+import type { Membre } from '@/lib/supabase/types'
 
-export default function CarouselEquipe() {
+interface CarouselEquipeProps {
+  membres: Membre[]
+}
+
+export default function CarouselEquipe({ membres }: CarouselEquipeProps) {
   const [index, setIndex] = useState(0)
-  const prev = () => setIndex((i) => (i - 1 + EQUIPE.length) % EQUIPE.length)
-  const next = () => setIndex((i) => (i + 1) % EQUIPE.length)
-  const membre = EQUIPE[index]
+  if (membres.length === 0) return null
+  const prev = () => setIndex((i) => (i - 1 + membres.length) % membres.length)
+  const next = () => setIndex((i) => (i + 1) % membres.length)
+  const membre = membres[index]
 
   return (
     <div className="relative">
@@ -28,9 +33,9 @@ export default function CarouselEquipe() {
       </button>
 
       <div className="text-center px-8">
-        {membre.photo ? (
+        {membre.photo_url ? (
           <Image
-            src={membre.photo}
+            src={membre.photo_url}
             width={400}
             height={400}
             className="w-28 h-28 rounded-full object-cover mx-auto mb-5 shadow-md"
@@ -45,12 +50,12 @@ export default function CarouselEquipe() {
           </div>
         )}
         <h3 className="font-bold text-gray-900 text-lg">{membre.nom}</h3>
-        <p className="text-sm font-medium text-gray-500 mb-4">{membre.titreLong}</p>
+        <p className="text-sm font-medium text-gray-500 mb-4">{membre.titre_long}</p>
         <p className="text-sm text-gray-600 leading-relaxed max-w-md mx-auto">{membre.description}</p>
       </div>
 
       <div className="flex justify-center gap-2 mt-6">
-        {EQUIPE.map((m, i) => (
+        {membres.map((m, i) => (
           <button
             key={m.id}
             onClick={() => setIndex(i)}
