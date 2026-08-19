@@ -68,7 +68,7 @@ export default function WelcomeSection() {
               Pharmacie Quartier des Hôpitaux
             </h2>
             <p className="text-gray-500 leading-relaxed mb-7">
-              La Dr Manal Sordo et son équipe vous accueillent dans un espace entièrement rénové,
+              La Dr Manal Khobzi Sordo et son équipe vous accueillent dans un espace entièrement rénové,
               moderne et chaleureux. Notre priorité : prendre soin de vous avec des conseils
               personnalisés, une sélection rigoureuse de marques dermatologiques et des services
               adaptés à vos besoins.

@@ -76,7 +76,7 @@ function WelcomeSection() {
           </div>
           <div className="text-gray-700 text-sm leading-relaxed space-y-3 text-justify">
             <p className="font-bold text-gray-900">Bienvenue à la Pharmacie Quartier des Hôpitaux !</p>
-            <p>Idéalement située au 279 Boulevard Abdelmoumen à Casablanca et proche des transports en commun (Arrêt Abd El Moumen Tram T1, T2), la Dr Manal Sordo et son équipe vous accueillent non-stop du lundi au vendredi de 9h00 à 20h00 et le samedi jusqu&apos;à 13h30.</p>
+            <p>Idéalement située au 279 Boulevard Abdelmoumen à Casablanca et proche des transports en commun (Arrêt Abd El Moumen Tram T1, T2), la Dr Manal Khobzi Sordo et son équipe vous accueillent non-stop du lundi au vendredi de 9h00 à 20h00 et le samedi jusqu&apos;à 13h30.</p>
             <p>N&apos;hésitez pas à nous envoyer votre{' '}<Link href="/ordonnance" className="text-navy font-semibold underline">ordonnance par WhatsApp</Link>, ou à venir nous rendre visite.</p>
             <p className="font-semibold">À très bientôt !</p>
           </div>

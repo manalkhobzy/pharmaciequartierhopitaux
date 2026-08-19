@@ -20,13 +20,16 @@ function getDayIndex() {
 }
 
 export default function HorairesWidget() {
-  const [isOpen, setIsOpen] = useState<boolean | null>(null)
-  const [todayIndex, setTodayIndex] = useState(0)
+  const [status, setStatus] = useState<{ isOpen: boolean; todayIndex: number } | null>(null)
 
   useEffect(() => {
-    setIsOpen(getOpenStatus())
-    setTodayIndex(getDayIndex())
+    // Dépend de l'heure locale du navigateur : calculé après montage pour éviter un mismatch d'hydratation SSR/CSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setStatus({ isOpen: getOpenStatus(), todayIndex: getDayIndex() })
   }, [])
+
+  const isOpen = status?.isOpen ?? null
+  const todayIndex = status?.todayIndex ?? 0
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">

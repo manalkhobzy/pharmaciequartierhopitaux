@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
           <p className="text-gray-400 leading-relaxed text-xs">
             Votre santé, notre priorité depuis 45 ans.<br />
-            Dr Manal Sordo et son équipe.
+            Dr Manal Khobzi Sordo et son équipe.
           </p>
           <a
             href="https://instagram.com/pharmaquartierdeshopitaux"
@@ -69,7 +69,6 @@ export default function Footer() {
               'Parapharmacie',
               'Préparations magistrales',
               'Phytothérapie',
-              'Vaccination',
             ].map(s => (
               <li key={s}>
                 <Link href="/nos-services" className="hover:text-white transition-colors text-xs">{s}</Link>

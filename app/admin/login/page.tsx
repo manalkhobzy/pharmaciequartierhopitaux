@@ -107,7 +107,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          Accès réservé à l'équipe de la pharmacie
+          Accès réservé à l&apos;équipe de la pharmacie
         </p>
       </div>
     </div>

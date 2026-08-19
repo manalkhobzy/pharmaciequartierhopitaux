@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Ordonnance WhatsApp",
   description:
-    "Envoyez votre ordonnance par WhatsApp et récupérez vos médicaments prêts en 1h. Service gratuit à la Pharmacie Quartier des Hôpitaux, Casablanca.",
+    "Envoyez votre ordonnance par WhatsApp, nous la préparons à l'avance. Retrait à la pharmacie muni de l'ordonnance originale — pas de livraison. Pharmacie Quartier des Hôpitaux, Casablanca.",
   alternates: {
     canonical: "/ordonnance",
   },
@@ -44,9 +44,9 @@ const ETAPES = [
   },
   {
     numero: 3,
-    titre: 'Votre commande est prête',
+    titre: 'Retrait à la pharmacie',
     description:
-      "Nous préparons votre commande et vous prévenons par WhatsApp dès que c'est prêt. Vous n'avez plus qu'à passer à la pharmacie !",
+      "Nous vous prévenons par WhatsApp dès que votre commande est prête. Le retrait se fait à la pharmacie, muni de votre ordonnance originale : elle est indispensable à la délivrance des médicaments.",
     bg: '#FFF3E0',
     image: '/images/ordonnance-step-retrait.webp',
     icone: (
@@ -78,6 +78,32 @@ export default function OrdonnancePage() {
       {/* ── TITRE ── */}
       <div className="max-w-7xl mx-auto px-6 pt-6 pb-2">
         <h1 className="text-2xl font-bold text-gray-900">Envoyer mon ordonnance</h1>
+      </div>
+
+      {/* ── ENCADRÉ : PAS DE LIVRAISON ── */}
+      <div className="max-w-7xl mx-auto px-6 pb-2">
+        <div className="flex items-start gap-4 rounded-xl border border-amber-200 bg-amber-50 px-5 py-4">
+          <svg
+            className="w-6 h-6 text-amber-600 shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.8}
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+          </svg>
+          <div>
+            <p className="font-semibold text-amber-900 text-sm mb-1">
+              Nous ne livrons pas de médicaments à domicile
+            </p>
+            <p className="text-amber-800 text-sm leading-relaxed">
+              Envoyer votre ordonnance sur WhatsApp nous permet de préparer votre commande à l&apos;avance.
+              Le retrait se fait à la pharmacie, muni de votre <strong className="font-semibold">ordonnance originale</strong>,
+              indispensable à la délivrance.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* ── 3 ÉTAPES VISUELLES ── */}
@@ -155,7 +181,11 @@ export default function OrdonnancePage() {
           </a>
         </div>
 
-        <p className="text-center text-gray-400 text-xs mt-4">
+        <p className="text-center text-gray-500 text-xs mt-5">
+          Rappel : commande à récupérer sur place, avec l&apos;ordonnance originale. Pas de livraison.
+        </p>
+
+        <p className="text-center text-gray-400 text-xs mt-2">
           Ou contactez-nous directement sur WhatsApp :{' '}
           <a href="https://wa.me/212653468785" className="text-navy hover:underline font-medium">
             06 53 46 87 85
@@ -185,7 +215,7 @@ export default function OrdonnancePage() {
             <p className="font-bold text-gray-900 text-xl mb-1">Gagnez du temps !</p>
             <p className="text-gray-600 text-base mb-5">
               Envoyez votre ordonnance en 1 message WhatsApp.<br />
-              Nous préparons tout. Vous n&apos;avez plus qu&apos;à passer.
+              Nous préparons tout. Vous passez la récupérer avec votre ordonnance originale.
             </p>
             <a
               href="https://wa.me/212653468785?text=Bonjour,%20je%20souhaite%20envoyer%20mon%20ordonnance"

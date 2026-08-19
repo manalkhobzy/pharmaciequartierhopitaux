@@ -223,7 +223,7 @@ export default function SlideForm({ slide, action, submitLabel }: SlideFormProps
                     onClick={() => setImageUrl('')}
                     className="flex items-center gap-1.5 text-xs text-red-500 hover:text-red-700 transition-colors"
                   >
-                    <X size={12} /> Supprimer l'image
+                    <X size={12} /> Supprimer l&apos;image
                   </button>
                 </div>
               </div>

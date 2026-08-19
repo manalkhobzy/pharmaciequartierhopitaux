@@ -38,7 +38,7 @@ export default async function ArticlesListPage() {
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
         {(!articles || articles.length === 0) ? (
           <div className="text-center py-20">
-            <p className="text-gray-400 mb-4">Aucun article pour l'instant</p>
+            <p className="text-gray-400 mb-4">Aucun article pour l&apos;instant</p>
             <Link href="/admin/articles/nouveau" className="text-primary text-sm font-medium hover:underline">
               Rédiger le premier article →
             </Link>

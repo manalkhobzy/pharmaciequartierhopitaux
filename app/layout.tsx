@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Pharmacie Quartier des Hôpitaux",
   },
   description:
-    "Pharmacie moderne au 279 Bd Abdelmoumen Casablanca. Parapharmacie, ordonnance WhatsApp, conseils personnalisés. Dr Manal Sordo.",
+    "Pharmacie moderne au 279 Bd Abdelmoumen Casablanca. Parapharmacie, ordonnance WhatsApp, conseils personnalisés. Dr Manal Khobzi Sordo.",
   keywords: [
     "pharmacie casablanca",
     "pharmacie abdelmoumen",

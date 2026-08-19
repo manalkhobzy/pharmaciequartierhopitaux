@@ -5,32 +5,14 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Notre Pharmacie",
   description:
-    "Découvrez la Pharmacie Quartier des Hôpitaux : 45 ans d'histoire, équipe à l'écoute, parapharmacie en libre accès. Dr Manal Sordo, 279 Bd Abdelmoumen, Casablanca.",
+    "Découvrez la Pharmacie Quartier des Hôpitaux : 45 ans d'histoire, équipe à l'écoute, parapharmacie en libre accès. Dr Manal Khobzi Sordo, 279 Bd Abdelmoumen, Casablanca.",
   alternates: {
     canonical: "/notre-pharmacie",
   },
 }
 import { MapPin, Phone, Clock, MessageSquare, FlaskConical, Sparkles, Leaf, ShoppingBag, Smartphone, HeartHandshake, ShoppingCart, Package, Pill } from 'lucide-react'
 import AvisGoogle from '@/components/shared/AvisGoogle'
-import { PHARMACIE } from '@/lib/constants'
-
-const EQUIPE = [
-  {
-    nom: 'Dr Manal Sordo',
-    titre: 'Docteur en Pharmacie, Faculté de Pharmacie de Lille.',
-    photo: '/images/team-manal-sordo.webp',
-  },
-  {
-    nom: 'Équipe officine',
-    titre: 'délivrance des ordonnances, vente de médicaments et conseil médical',
-    photo: '/images/team-equipe-officine.webp',
-  },
-  {
-    nom: 'Conseil parapharmacie',
-    titre: 'Spécialistes beauté, soin & bien-être',
-    photo: '/images/team-conseil-parapharmacie.webp',
-  },
-]
+import { PHARMACIE, EQUIPE } from '@/lib/constants'
 
 const EXPERTISES = [
   { label: 'Aromathérapie',           icon: <Leaf        className="w-7 h-7 text-primary" /> },
@@ -101,7 +83,7 @@ export default function QuiSommesNousPage() {
           </h2>
           <p>
             Idéalement située au <strong>279 Boulevard Abdelmoumen</strong> à Casablanca,
-            la Dr Manal Sordo et son équipe vous accueillent du lundi au vendredi de
+            la Dr Manal Khobzi Sordo et son équipe vous accueillent du lundi au vendredi de
             9h00 à 20h00 et le samedi de 9h00 à 13h30.
           </p>
           <p>Notre priorité : <strong>prendre soin de vous</strong>. Nous vous proposons entre autres :</p>
@@ -161,19 +143,28 @@ export default function QuiSommesNousPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-12">
             {EQUIPE.map((membre) => (
-              <div key={membre.nom} className="flex flex-col items-center gap-3 w-60">
-                <div className="w-56 h-56 rounded-2xl overflow-hidden bg-gray-100 shadow-md">
-                  <Image
-                    src={membre.photo}
-                    width={224}
-                    height={224}
-                    className="w-full h-full object-cover"
-                    alt={membre.nom}
-                  />
+              <div key={membre.id} className="flex flex-col items-center gap-3 w-52">
+                <div className="w-48 h-48 rounded-2xl overflow-hidden bg-gray-100 shadow-md">
+                  {membre.photo ? (
+                    <Image
+                      src={membre.photo}
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-cover"
+                      alt={membre.nom}
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center bg-primary-50 text-primary-500 text-5xl font-bold select-none"
+                      aria-hidden="true"
+                    >
+                      {membre.nom.charAt(0)}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <p className="font-bold text-gray-900 text-sm">{membre.nom}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{membre.titre}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{membre.titreLong}</p>
                 </div>
               </div>
             ))}

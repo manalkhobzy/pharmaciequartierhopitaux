@@ -47,24 +47,6 @@ const SERVICES = [
     ctaStyle: 'whatsapp',
   },
   {
-    id: 'vaccination',
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
-        <circle cx="24" cy="24" r="22" fill="#EBF5FB"/>
-        <path d="M30 14l4 4-14 14-4-4 14-14z" fill="#4DC1CB" opacity="0.3"/>
-        <path d="M30 14l4 4-14 14-4-4 14-14z" stroke="#4DC1CB" strokeWidth="2" strokeLinejoin="round"/>
-        <path d="M16 32l-4 4M28 12l4-4M20 17l11 11" stroke="#1B3560" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="34" cy="14" r="2" fill="#1B3560"/>
-      </svg>
-    ),
-    titre: 'Vaccination',
-    description:
-      'Vaccins disponibles en pharmacie : grippe saisonnière, hépatite B, tétanos et autres vaccins sur prescription. Sur rendez-vous.',
-    cta: 'Prendre rendez-vous',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20une%20vaccination.',
-    ctaStyle: 'teal',
-  },
-  {
     id: 'depistage',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
@@ -77,7 +59,7 @@ const SERVICES = [
     ),
     titre: 'Tests & Dépistage rapide',
     description:
-      'Tests de glycémie, tension artérielle, cholestérol, et tests antigéniques disponibles sans rendez-vous selon disponibilité.',
+      'Tests de glycémie et mesure de la tension artérielle, disponibles sans rendez-vous selon disponibilité.',
     cta: 'Nous contacter',
     href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20tests%20disponibles.',
     ctaStyle: 'navy',

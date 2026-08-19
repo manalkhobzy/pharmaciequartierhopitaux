@@ -59,7 +59,7 @@ export default async function SlidesListPage() {
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
         {list.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-gray-400 mb-3">Aucun slide pour l'instant</p>
+            <p className="text-gray-400 mb-3">Aucun slide pour l&apos;instant</p>
             <Link href="/admin/slides/nouveau" className="text-primary text-sm font-medium hover:underline">
               Créer le premier slide →
             </Link>

@@ -26,7 +26,7 @@ export default async function EditArticlePage({
           <ArrowLeft size={20} />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Modifier l'article</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Modifier l&apos;article</h1>
           <p className="text-sm text-gray-500 mt-0.5 truncate max-w-xl">{article.title}</p>
         </div>
       </div>

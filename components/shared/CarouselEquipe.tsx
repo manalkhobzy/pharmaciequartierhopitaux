@@ -2,30 +2,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-
-const EQUIPE = [
-  {
-    nom: 'Dr Manal Sordo',
-    titre: 'Docteur en Pharmacie',
-    description:
-      'Diplômée de la Faculté de Pharmacie de Lille, la Dr Sordo a exercé 2 ans en France avant de reprendre la Pharmacie Quartier des Hôpitaux. Spécialisée en dermatologie, phytothérapie et aromathérapie.',
-    photo: '/images/team-manal-sordo.webp',
-  },
-  {
-    nom: 'Équipe officine',
-    titre: 'Préparateurs en pharmacie',
-    description:
-      'Notre équipe de préparateurs est formée pour vous accueillir avec professionnalisme, vous conseiller sur vos traitements et préparer vos ordonnances avec soin.',
-    photo: '/images/team-equipe-officine.webp',
-  },
-  {
-    nom: 'Conseil parapharmacie',
-    titre: 'Spécialistes beauté & soin',
-    description:
-      'Nos conseillers en parapharmacie vous orientent dans le choix de vos soins : dermo-cosmétique, capillaire, hygiène et bien-être.',
-    photo: '/images/team-conseil-parapharmacie.webp',
-  },
-]
+import { EQUIPE } from '@/lib/constants'
 
 export default function CarouselEquipe() {
   const [index, setIndex] = useState(0)
@@ -51,26 +28,35 @@ export default function CarouselEquipe() {
       </button>
 
       <div className="text-center px-8">
-        <Image
-          src={membre.photo ?? '/images/article-placeholder.webp'}
-          width={400}
-          height={400}
-          className="w-28 h-28 rounded-full object-cover mx-auto mb-5 shadow-md"
-          alt={membre.nom}
-        />
+        {membre.photo ? (
+          <Image
+            src={membre.photo}
+            width={400}
+            height={400}
+            className="w-28 h-28 rounded-full object-cover mx-auto mb-5 shadow-md"
+            alt={membre.nom}
+          />
+        ) : (
+          <div
+            className="w-28 h-28 rounded-full mx-auto mb-5 shadow-md flex items-center justify-center bg-primary-50 text-primary-500 text-3xl font-bold select-none"
+            aria-hidden="true"
+          >
+            {membre.nom.charAt(0)}
+          </div>
+        )}
         <h3 className="font-bold text-gray-900 text-lg">{membre.nom}</h3>
-        <p className="text-sm font-medium text-gray-500 mb-4">{membre.titre}</p>
+        <p className="text-sm font-medium text-gray-500 mb-4">{membre.titreLong}</p>
         <p className="text-sm text-gray-600 leading-relaxed max-w-md mx-auto">{membre.description}</p>
       </div>
 
       <div className="flex justify-center gap-2 mt-6">
-        {EQUIPE.map((_, i) => (
+        {EQUIPE.map((m, i) => (
           <button
-            key={i}
+            key={m.id}
             onClick={() => setIndex(i)}
             className="w-2 h-2 rounded-full transition-all"
             style={{ backgroundColor: i === index ? '#1B3560' : '#CBD5E1' }}
-            aria-label={`Membre ${i + 1}`}
+            aria-label={`Membre ${i + 1} : ${m.nom}`}
           />
         ))}
       </div>

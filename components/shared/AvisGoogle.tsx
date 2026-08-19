@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { fetchPlaceDetails, type GoogleReview } from '@/lib/google-places'
+import { PHARMACIE } from '@/lib/constants'
 
 function Etoiles({ note }: { note: number }) {
   return (
@@ -52,40 +53,11 @@ function CarteAvis({ avis }: { avis: GoogleReview }) {
   )
 }
 
-// Avis de secours affichés si l'API n'est pas encore configurée
-const AVIS_FALLBACK: GoogleReview[] = [
-  {
-    author_name: 'Sara M.',
-    rating: 5,
-    text: 'Personnel très accueillant et professionnel. La Dr Sordo prend le temps d\'expliquer chaque médicament. Je recommande vivement cette pharmacie !',
-    relative_time_description: 'Il y a 2 semaines',
-    profile_photo_url: '',
-    time: 0,
-  },
-  {
-    author_name: 'Karim B.',
-    rating: 5,
-    text: 'Service impeccable, pharmacie bien achalandée. Le service ordonnance par WhatsApp est vraiment pratique, ça m\'évite de longues attentes.',
-    relative_time_description: 'Il y a 1 mois',
-    profile_photo_url: '',
-    time: 0,
-  },
-  {
-    author_name: 'Nadia H.',
-    rating: 5,
-    text: 'Très bonne pharmacie, conseils de qualité en parapharmacie et produits dermatologiques. Espace propre et moderne.',
-    relative_time_description: 'Il y a 2 mois',
-    profile_photo_url: '',
-    time: 0,
-  },
-]
-
 export default async function AvisGoogle() {
   const details = await fetchPlaceDetails()
-  const avis = details?.reviews ?? AVIS_FALLBACK
-  const note = details?.rating ?? 5
-  const total = details?.user_ratings_total ?? 17
-  const source = details ? 'live' : 'fallback'
+  const avis: GoogleReview[] = details?.reviews ?? []
+  const note = details?.rating ?? PHARMACIE.noteGoogle
+  const total = details?.user_ratings_total ?? PHARMACIE.nbAvis
 
   return (
     <section className="py-12 bg-gray-50">
@@ -114,18 +86,18 @@ export default async function AvisGoogle() {
           </a>
         </div>
 
-        {/* Grille d'avis */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {avis.slice(0, 6).map((a, i) => (
-            <CarteAvis key={`${a.author_name}-${i}`} avis={a} />
-          ))}
-        </div>
-
-        {/* Badge source */}
-        {source === 'live' && (
-          <p className="text-center text-xs text-gray-400 mt-6">
-            Avis récupérés en temps réel depuis Google Maps
-          </p>
+        {/* Grille d'avis — uniquement de vrais avis Google */}
+        {avis.length > 0 && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {avis.slice(0, 6).map((a, i) => (
+                <CarteAvis key={`${a.author_name}-${i}`} avis={a} />
+              ))}
+            </div>
+            <p className="text-center text-xs text-gray-400 mt-6">
+              Avis récupérés depuis Google Maps
+            </p>
+          </>
         )}
       </div>
     </section>

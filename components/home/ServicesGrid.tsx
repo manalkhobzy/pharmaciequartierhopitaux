@@ -4,7 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import {
   MessageCircle, FlaskConical, ShoppingBag, Leaf, Droplets, Pill,
-  Syringe, Heart, Apple, Sparkles, Home, CreditCard,
+  Heart, Apple, Sparkles, Home, CreditCard,
 } from "lucide-react"
 import { SERVICES } from "@/lib/constants"
 
@@ -15,7 +15,6 @@ const iconMap: Record<string, React.ReactNode> = {
   Leaf: <Leaf className="w-6 h-6" />,
   Droplets: <Droplets className="w-6 h-6" />,
   Pill: <Pill className="w-6 h-6" />,
-  Syringe: <Syringe className="w-6 h-6" />,
   Heart: <Heart className="w-6 h-6" />,
   Apple: <Apple className="w-6 h-6" />,
   Sparkles: <Sparkles className="w-6 h-6" />,
