@@ -1,10 +1,12 @@
 export const PHARMACIE = {
-  nom: "Pharmacie Quartier des Hôpitaux",
+  nom: "Pharmacie & Para Quartier des Hôpitaux",
   slogan: "Votre santé, notre priorité depuis 45 ans",
   adresse: "279 Boulevard Abdelmoumen, Casablanca 20340, Maroc",
   adresseShort: "279 Bd Abdelmoumen, Casablanca",
   telephone: "05 22 86 06 54",
   telephoneLink: "+212522860654",
+  // WhatsApp : SEULE source du numéro sur tout le site. Pour basculer sur la ligne
+  // dédiée de la pharmacie, modifier uniquement ces 2 lignes.
   whatsapp: "212653468785",
   whatsappDisplay: "06 53 46 87 85",
   email: "",
@@ -13,8 +15,8 @@ export const PHARMACIE = {
   googleMapsUrl: "https://maps.google.com/?q=279+Bd+Abdelmoumen+Casablanca",
   googleMapsEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.1!2d-7.6254!3d33.5992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s279+Bd+Abdelmoumen+Casablanca!5e0!3m2!1sfr!2sma!4v1",
-  noteGoogle: 5.0,
-  nbAvis: 21,
+  noteGoogle: 4.9, // repli si l'API Places ne répond pas (relevé du 16/09/2026)
+  nbAvis: 28,
   anneeCreation: 1979,
   horaires: [
     { jour: "Lundi", jourCourt: "Lun", ouverture: "09:00", fermeture: "20:00", ouvert: true },
@@ -28,7 +30,7 @@ export const PHARMACIE = {
   whatsappOrdonnanceMsg:
     "Bonjour,%20je%20souhaite%20envoyer%20mon%20ordonnance",
   whatsappContactMsg:
-    "Bonjour,%20j%27ai%20une%20question%20pour%20la%20Pharmacie%20Quartier%20des%20H%C3%B4pitaux",
+    "Bonjour,%20j%27ai%20une%20question%20pour%20la%20Pharmacie%20%26%20Para%20Quartier%20des%20H%C3%B4pitaux",
 } as const
 
 export const SERVICES = [

@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Notre Pharmacie",
   description:
-    "Découvrez la Pharmacie Quartier des Hôpitaux : 45 ans d'histoire, équipe à l'écoute, parapharmacie en libre accès. Dr Manal Khobzi Sordo, 279 Bd Abdelmoumen, Casablanca.",
+    "Découvrez la Pharmacie & Para Quartier des Hôpitaux : 45 ans d'histoire, équipe à l'écoute, parapharmacie en libre accès. Dr Manal Khobzi Sordo, 279 Bd Abdelmoumen, Casablanca.",
   alternates: {
     canonical: "/notre-pharmacie",
   },
@@ -82,18 +82,18 @@ export default async function QuiSommesNousPage() {
               src="/images/pharmacie-facade.webp"
               fill
               className="object-cover"
-              alt="Pharmacie Quartier des Hôpitaux"
+              alt="Pharmacie & Para Quartier des Hôpitaux"
             />
           </div>
         </div>
 
         <div className="lg:col-span-2 space-y-4 text-sm text-gray-700 leading-relaxed">
           <h2 className="text-xl font-bold text-gray-900">
-            Bienvenue à la Pharmacie Quartier des Hôpitaux !
+            Bienvenue à la Pharmacie & Para Quartier des Hôpitaux !
           </h2>
           <p>
             Idéalement située au <strong>279 Boulevard Abdelmoumen</strong> à Casablanca,
-            la Dr Manal Khobzi Sordo et son équipe vous accueillent du lundi au vendredi de
+            Dr Manal Khobzi Sordo et son équipe vous accueillent du lundi au vendredi de
             9h00 à 20h00 et le samedi de 9h00 à 13h30.
           </p>
           <p>Notre priorité : <strong>prendre soin de vous</strong>. Nous vous proposons entre autres :</p>
@@ -254,7 +254,7 @@ export default async function QuiSommesNousPage() {
                 <a href="tel:+212522860654" className="text-sm text-navy hover:underline font-medium">
                   05 22 86 06 54
                 </a>
-                <p className="text-xs text-gray-500 mt-1">WhatsApp : 06 53 46 87 85</p>
+                <p className="text-xs text-gray-500 mt-1">WhatsApp : {PHARMACIE.whatsappDisplay}</p>
               </div>
             </div>
 
@@ -286,7 +286,7 @@ export default async function QuiSommesNousPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Localisation Pharmacie Quartier des Hôpitaux"
+          title="Localisation Pharmacie & Para Quartier des Hôpitaux"
         />
       </section>
 

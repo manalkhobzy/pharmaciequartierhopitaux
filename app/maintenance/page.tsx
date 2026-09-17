@@ -4,7 +4,7 @@ import { Phone, MessageCircle, Wrench } from 'lucide-react'
 import { PHARMACIE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Site en maintenance | Pharmacie Quartier des Hôpitaux',
+  title: 'Site en maintenance | Pharmacie & Para Quartier des Hôpitaux',
   robots: { index: false, follow: false },
 }
 

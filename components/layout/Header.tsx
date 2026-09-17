@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import { PHARMACIE } from '@/lib/constants'
 
 const navLinks = [
   { label: "Envoi d'ordonnance", href: '/ordonnance', highlight: true },
@@ -25,8 +26,8 @@ export default function Header() {
         {/* BARRE TOP — bleu marine */}
         <div className="bg-navy text-white text-xs py-1.5 px-4 text-center tracking-wide">
           Découvrez notre service ordonnance WhatsApp - Préparation en 1h ·{' '}
-          <a href="https://wa.me/212653468785" className="underline font-semibold">
-            06 53 46 87 85
+          <a href={`https://wa.me/${PHARMACIE.whatsapp}`} className="underline font-semibold">
+            {PHARMACIE.whatsappDisplay}
           </a>
         </div>
 

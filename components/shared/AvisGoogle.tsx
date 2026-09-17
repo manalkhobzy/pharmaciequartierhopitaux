@@ -74,7 +74,7 @@ export default async function AvisGoogle() {
             </div>
           </div>
           <a
-            href="https://www.google.com/search?q=Pharmacie+Quartier+des+H%C3%B4pitaux+Casablanca"
+            href="https://www.google.com/search?q=Pharmacie+%26+Para+Quartier+des+H%C3%B4pitaux+Casablanca"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-white bg-[#1B6B4A] hover:bg-[#2D9966] px-4 py-2 rounded-lg transition-colors self-start sm:self-auto"

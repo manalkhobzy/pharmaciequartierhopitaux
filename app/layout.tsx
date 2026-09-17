@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import { PHARMACIE } from '@/lib/constants'
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,8 +20,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Pharmacie Quartier des Hôpitaux — Casablanca",
-    template: "%s | Pharmacie Quartier des Hôpitaux",
+    default: "Pharmacie & Para Quartier des Hôpitaux — Casablanca",
+    template: "%s | Pharmacie & Para Quartier des Hôpitaux",
   },
   description:
     "Pharmacie moderne au 279 Bd Abdelmoumen Casablanca. Parapharmacie, ordonnance WhatsApp, conseils personnalisés. Dr Manal Khobzi Sordo.",
@@ -30,13 +31,13 @@ export const metadata: Metadata = {
     "parapharmacie casablanca",
     "ordonnance whatsapp",
     "pharmacie quartier hopitaux casablanca",
-    "dr manal sordo",
+    "dr manal khobzi sordo",
   ],
   openGraph: {
     locale: "fr_MA",
     type: "website",
-    siteName: "Pharmacie Quartier des Hôpitaux",
-    title: "Pharmacie Quartier des Hôpitaux — Casablanca",
+    siteName: "Pharmacie & Para Quartier des Hôpitaux",
+    title: "Pharmacie & Para Quartier des Hôpitaux — Casablanca",
     description:
       "Pharmacie moderne au 279 Bd Abdelmoumen Casablanca. Parapharmacie en libre accès, ordonnance WhatsApp.",
   },
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["Pharmacy", "LocalBusiness"],
-  name: "Pharmacie Quartier des Hôpitaux",
+  name: "Pharmacie & Para Quartier des Hôpitaux",
   description: "Pharmacie moderne et parapharmacie en libre accès à Casablanca.",
   address: {
     "@type": "PostalAddress",
@@ -56,8 +57,8 @@ const jsonLd = {
     addressCountry: "MA",
   },
   telephone: "+212522860654",
+  url: "https://pharmaciequartierhopitaux.com",
   openingHours: ["Mo-Fr 09:00-20:00", "Sa 09:00-13:30"],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "17" },
   sameAs: ["https://instagram.com/pharmaquartierdeshopitaux"],
   geo: { "@type": "GeoCoordinates", latitude: "33.5992", longitude: "-7.6254" },
 }
@@ -74,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         {/* Bouton WhatsApp flottant */}
         <a
-          href="https://wa.me/212653468785"
+          href={`https://wa.me/${PHARMACIE.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform"

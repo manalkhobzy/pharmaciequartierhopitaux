@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { PHARMACIE } from '@/lib/constants'
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
                 <div className="w-2.5 h-8 bg-pharmacy-green rounded-sm absolute" />
               </div>
             </div>
-            <span className="font-bold">Pharmacie Quartier des Hôpitaux</span>
+            <span className="font-bold">{PHARMACIE.nom}</span>
           </div>
           <p className="text-gray-400 leading-relaxed text-xs">
             Votre santé, notre priorité depuis 45 ans.<br />
@@ -83,7 +84,7 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-400 text-xs">
             <li>279 Bd Abdelmoumen<br />Casablanca 20340, Maroc</li>
             <li><a href="tel:+212522860654" className="hover:text-white">05 22 86 06 54</a></li>
-            <li><a href="https://wa.me/212653468785" className="hover:text-white">WhatsApp : 06 53 46 87 85</a></li>
+            <li><a href={`https://wa.me/${PHARMACIE.whatsapp}`} className="hover:text-white">WhatsApp : {PHARMACIE.whatsappDisplay}</a></li>
             <li>Lun–Ven 9h–20h · Sam 9h–13h30</li>
           </ul>
         </div>
@@ -92,7 +93,7 @@ export default function Footer() {
 
       <div className="border-t border-gray-700 px-6 py-3">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-gray-500">
-          <span>© {new Date().getFullYear()} Pharmacie & Parapharmacie Quartier des Hôpitaux</span>
+          <span>© {new Date().getFullYear()} {PHARMACIE.nom}</span>
           <a
             href="https://www.agencelepanaf.com"
             target="_blank"

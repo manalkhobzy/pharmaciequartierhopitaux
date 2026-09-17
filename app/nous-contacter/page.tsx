@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm"
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contactez la Pharmacie Quartier des Hôpitaux au 279 Bd Abdelmoumen Casablanca. Tél : 05 22 86 06 54. WhatsApp disponible.",
+    "Contactez la Pharmacie & Para Quartier des Hôpitaux au 279 Bd Abdelmoumen Casablanca. Tél : 05 22 86 06 54. WhatsApp disponible.",
   alternates: {
     canonical: "/nous-contacter",
   },
@@ -138,7 +138,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Localisation Pharmacie Quartier des Hôpitaux"
+          title="Localisation Pharmacie & Para Quartier des Hôpitaux"
         />
       </section>
     </>

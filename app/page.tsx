@@ -5,6 +5,7 @@ import HeroCarousel from '@/components/home/HeroCarousel'
 import { getConseilDuMois, getCategories } from '@/lib/articles'
 import { getActiveSlides } from '@/lib/slides'
 import type { Article } from '@/lib/supabase/types'
+import { PHARMACIE } from '@/lib/constants'
 
 // ─── DONNÉES ────────────────────────────────────────────────────────────────
 
@@ -56,7 +57,7 @@ function InfoBar() {
           </svg>
           <div>
             <p className="font-bold text-[10px] sm:text-sm uppercase tracking-wide">WHATSAPP</p>
-            <p className="text-white/70 text-[10px] sm:text-sm">Ordonnance · 06 53 46 87 85</p>
+            <p className="text-white/70 text-[10px] sm:text-sm">Ordonnance · {PHARMACIE.whatsappDisplay}</p>
           </div>
         </div>
       </div>
@@ -72,11 +73,11 @@ function WelcomeSection() {
         <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Bienvenue dans notre pharmacie</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="rounded-lg overflow-hidden">
-            <Image src="/images/pharmacie.webp" alt="Pharmacie Quartier des Hôpitaux — Casablanca" width={600} height={400} className="w-full h-auto" />
+            <Image src="/images/pharmacie.webp" alt="Pharmacie & Para Quartier des Hôpitaux — Casablanca" width={600} height={400} className="w-full h-auto" />
           </div>
           <div className="text-gray-700 text-sm leading-relaxed space-y-3 text-justify">
-            <p className="font-bold text-gray-900">Bienvenue à la Pharmacie Quartier des Hôpitaux !</p>
-            <p>Idéalement située au 279 Boulevard Abdelmoumen à Casablanca et proche des transports en commun (Arrêt Abd El Moumen Tram T1, T2), la Dr Manal Khobzi Sordo et son équipe vous accueillent non-stop du lundi au vendredi de 9h00 à 20h00 et le samedi jusqu&apos;à 13h30.</p>
+            <p className="font-bold text-gray-900">Bienvenue à la Pharmacie & Para Quartier des Hôpitaux !</p>
+            <p>Idéalement située au 279 Boulevard Abdelmoumen à Casablanca et proche des transports en commun (Arrêt Abd El Moumen Tram T1, T2), Dr Manal Khobzi Sordo et son équipe vous accueillent non-stop du lundi au vendredi de 9h00 à 20h00 et le samedi jusqu&apos;à 13h30.</p>
             <p>N&apos;hésitez pas à nous envoyer votre{' '}<Link href="/ordonnance" className="text-navy font-semibold underline">ordonnance par WhatsApp</Link>, ou à venir nous rendre visite.</p>
             <p className="font-semibold">À très bientôt !</p>
           </div>

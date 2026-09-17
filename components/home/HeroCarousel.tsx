@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import type { Slide } from '@/lib/supabase/types'
+import { PHARMACIE } from '@/lib/constants'
 
 const FALLBACK_SLIDES: Slide[] = [
   {
@@ -10,7 +11,7 @@ const FALLBACK_SLIDES: Slide[] = [
     title: 'Votre ordonnance prête en 1h',
     subtitle: 'Envoyez-la sur WhatsApp, passez la récupérer.',
     cta_label: 'Envoyer mon ordonnance',
-    cta_href: 'https://wa.me/212653468785',
+    cta_href: `https://wa.me/${PHARMACIE.whatsapp}`,
     accent_color: '#2E7D32',
     bg_gradient: 'linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)',
     image_url: '/images/hero/ordonnance.webp',

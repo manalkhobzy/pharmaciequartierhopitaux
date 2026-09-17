@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { PHARMACIE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: "Nos Services",
   description:
-    "Parapharmacie, préparations magistrales, phytothérapie, aromathérapie et homéopathie à la Pharmacie Quartier des Hôpitaux — 279 Bd Abdelmoumen, Casablanca.",
+    "Parapharmacie, préparations magistrales, phytothérapie, aromathérapie et homéopathie à la Pharmacie & Para Quartier des Hôpitaux — 279 Bd Abdelmoumen, Casablanca.",
   alternates: {
     canonical: "/nos-services",
   },
@@ -43,7 +44,7 @@ const SERVICES = [
     description:
       'Envoyez votre ordonnance par WhatsApp. Votre commande est préparée avant votre arrivée pour vous faire gagner du temps.',
     cta: 'Envoyer par WhatsApp',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20envoyer%20mon%20ordonnance.',
+    href: `https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20souhaite%20envoyer%20mon%20ordonnance.`,
     ctaStyle: 'whatsapp',
   },
   {
@@ -61,7 +62,7 @@ const SERVICES = [
     description:
       'Tests de glycémie et mesure de la tension artérielle, disponibles sans rendez-vous selon disponibilité.',
     cta: 'Nous contacter',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20tests%20disponibles.',
+    href: `https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20tests%20disponibles.`,
     ctaStyle: 'navy',
   },
   {
@@ -79,7 +80,7 @@ const SERVICES = [
     description:
       'Accompagnement personnalisé tout au long de la grossesse : vitamines, compléments, matériel de puériculture et conseils adaptés.',
     cta: 'Nous contacter',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20des%20conseils%20grossesse%20et%20maternit%C3%A9.',
+    href: `https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20souhaite%20des%20conseils%20grossesse%20et%20maternit%C3%A9.`,
     ctaStyle: 'navy',
   },
   {
@@ -96,7 +97,7 @@ const SERVICES = [
     description:
       'Préparations sur mesure selon votre prescription : crèmes dermatologiques, gélules dosées, solutions buvables et formules spécifiques.',
     cta: 'Déposer une ordonnance',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20une%20pr%C3%A9paration%20magistrale.',
+    href: `https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20souhaite%20une%20pr%C3%A9paration%20magistrale.`,
     ctaStyle: 'teal',
   },
   {
@@ -113,7 +114,7 @@ const SERVICES = [
     description:
       'Plantes médicinales, tisanes et compléments à base de plantes pour soutenir votre santé naturellement. Conseils personnalisés par nos pharmaciens.',
     cta: 'Nous consulter',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20phytoth%C3%A9rapie.',
+    href: `https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20phytoth%C3%A9rapie.`,
     ctaStyle: 'navy',
   },
   {
@@ -132,7 +133,7 @@ const SERVICES = [
     description:
       'Huiles essentielles pures et bio, hydrolats et diffuseurs pour le bien-être au quotidien. Nos pharmaciens vous conseillent sur les utilisations et les précautions.',
     cta: 'Nous consulter',
-    href: 'https://wa.me/212653468785?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20l%27aromath%C3%A9rapie.',
+    href: `https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20l%27aromath%C3%A9rapie.`,
     ctaStyle: 'navy',
   },
   ]
@@ -182,7 +183,7 @@ export default function ServicesPage() {
       <div className="max-w-7xl mx-auto px-4 pt-10 pb-6">
         <h1 className="text-3xl font-bold text-navy mb-3">Nos services</h1>
         <p className="text-gray-600 max-w-2xl leading-relaxed">
-          La Pharmacie Quartier des Hôpitaux vous propose une gamme complète de services pour prendre soin de votre santé et de celle de votre famille. Notre équipe est disponible pour vous accompagner et répondre à toutes vos questions.
+          La Pharmacie & Para Quartier des Hôpitaux vous propose une gamme complète de services pour prendre soin de votre santé et de celle de votre famille. Notre équipe est disponible pour vous accompagner et répondre à toutes vos questions.
         </p>
       </div>
 
@@ -237,7 +238,7 @@ export default function ServicesPage() {
               Appeler la pharmacie
             </a>
             <a
-              href="https://wa.me/212653468785?text=Bonjour%2C%20je%20cherche%20la%20pharmacie%20de%20garde."
+              href={`https://wa.me/${PHARMACIE.whatsapp}?text=Bonjour%2C%20je%20cherche%20la%20pharmacie%20de%20garde.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#1ebe5d] transition-colors text-sm"
@@ -284,7 +285,6 @@ export default function ServicesPage() {
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
               279 Boulevard Abdelmoumen<br />
-              Quartier des Hôpitaux<br />
               Casablanca 20340
             </p>
             <a
@@ -312,13 +312,13 @@ export default function ServicesPage() {
                 <span>05 22 86 06 54</span>
               </a>
               <a
-                href="https://wa.me/212653468785"
+                href={`https://wa.me/${PHARMACIE.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[#25D366] font-medium hover:underline"
               >
                 <WhatsAppIcon />
-                WhatsApp — 06 53 46 87 85
+                WhatsApp — {PHARMACIE.whatsappDisplay}
               </a>
             </div>
           </div>

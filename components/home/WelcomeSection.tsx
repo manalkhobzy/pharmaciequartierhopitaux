@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { CheckCircle, ArrowRight, Star } from "lucide-react"
+import { PHARMACIE } from '@/lib/constants'
 
 const engagements = [
   "Conseils personnalisés : phytothérapie, aromathérapie, homéopathie",
@@ -32,7 +33,7 @@ export default function WelcomeSection() {
                 src="/images/pharmacie-facade.webp"
                 fill
                 className="object-cover"
-                alt="Pharmacie Quartier des Hôpitaux — vue intérieure"
+                alt="Pharmacie & Para Quartier des Hôpitaux — vue intérieure"
                 priority
               />
               {/* Carte flottante avis Google */}
@@ -65,10 +66,10 @@ export default function WelcomeSection() {
               Bienvenue
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-5">
-              Pharmacie Quartier des Hôpitaux
+              {PHARMACIE.nom}
             </h2>
             <p className="text-gray-500 leading-relaxed mb-7">
-              La Dr Manal Khobzi Sordo et son équipe vous accueillent dans un espace entièrement rénové,
+              Dr Manal Khobzi Sordo et son équipe vous accueillent dans un espace entièrement rénové,
               moderne et chaleureux. Notre priorité : prendre soin de vous avec des conseils
               personnalisés, une sélection rigoureuse de marques dermatologiques et des services
               adaptés à vos besoins.
