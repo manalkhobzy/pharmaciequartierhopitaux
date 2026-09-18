@@ -11,6 +11,7 @@ export async function getAllArticles(): Promise<ArticleMeta[]> {
     .from('articles')
     .select('id,title,slug,excerpt,category,image_url,read_time,published,published_at,created_at,updated_at')
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .order('published_at', { ascending: false })
   return (data ?? []) as ArticleMeta[]
 }
@@ -22,6 +23,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     .select('*')
     .eq('slug', slug)
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .single()
   return data ?? null
 }
@@ -46,6 +48,7 @@ export async function getConseilDuMois(): Promise<Article | null> {
     .select('*')
     .eq('id', setting.value)
     .eq('published', true)
+    .lte('published_at', new Date().toISOString())
     .single()
 
   return data ?? null

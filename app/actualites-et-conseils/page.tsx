@@ -4,7 +4,7 @@ import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight, Search } from "lucide-react"
 import { getAllArticles, getCategories } from "@/lib/articles"
 
-const PER_PAGE = 12
+const PER_PAGE = 8
 
 export const metadata: Metadata = {
   title: "Actualités et conseils",

@@ -51,6 +51,7 @@ export async function createArticleAction(formData: FormData) {
   const supabase = await createClient()
 
   const published = formData.get('published') === 'true'
+  const publishedAtInput = formData.get('published_at') as string | null
 
   const { data, error } = await supabase
     .from('articles')
@@ -63,7 +64,9 @@ export async function createArticleAction(formData: FormData) {
       image_url: (formData.get('image_url') as string) || null,
       read_time: (formData.get('read_time') as string) || '5 min',
       published,
-      published_at: published ? new Date().toISOString() : null,
+      published_at: published
+        ? new Date(publishedAtInput || Date.now()).toISOString()
+        : null,
     })
     .select('id')
     .single()
@@ -81,6 +84,7 @@ export async function updateArticleAction(formData: FormData) {
   const supabase = await createClient()
   const id = formData.get('id') as string
   const published = formData.get('published') === 'true'
+  const publishedAtInput = formData.get('published_at') as string | null
 
   const { error } = await supabase
     .from('articles')
@@ -93,7 +97,9 @@ export async function updateArticleAction(formData: FormData) {
       image_url: (formData.get('image_url') as string) || null,
       read_time: (formData.get('read_time') as string) || '5 min',
       published,
-      published_at: published ? new Date().toISOString() : null,
+      published_at: published
+        ? new Date(publishedAtInput || Date.now()).toISOString()
+        : null,
     })
     .eq('id', id)
 

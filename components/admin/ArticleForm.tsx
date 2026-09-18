@@ -29,6 +29,12 @@ const CATEGORIES = [
   'Actualités',
 ]
 
+function toLocalInputValue(iso: string | null | undefined): string {
+  const d = iso ? new Date(iso) : new Date()
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`
+}
+
 interface ArticleFormProps {
   article?: Article
   action: (formData: FormData) => Promise<void>
@@ -46,6 +52,7 @@ export default function ArticleForm({ article, action, submitLabel }: ArticleFor
   const [imageUrl, setImageUrl] = useState(article?.image_url ?? '')
   const [content, setContent] = useState(article?.content ?? '')
   const [published, setPublished] = useState(article?.published ?? false)
+  const [publishedAt, setPublishedAt] = useState(toLocalInputValue(article?.published_at))
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
 
@@ -178,7 +185,11 @@ export default function ArticleForm({ article, action, submitLabel }: ArticleFor
               <div>
                 <p className="text-sm font-medium text-gray-900">Statut</p>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  {published ? 'Visible sur le site' : 'Brouillon — non visible'}
+                  {!published
+                    ? 'Brouillon — non visible'
+                    : new Date(publishedAt) > new Date()
+                      ? 'Planifié — masqué jusqu\'à la date'
+                      : 'Visible sur le site'}
                 </p>
               </div>
               <button
@@ -193,6 +204,24 @@ export default function ArticleForm({ article, action, submitLabel }: ArticleFor
                 }`} />
               </button>
             </div>
+
+            {published && (
+              <div className="mb-5">
+                <label className="block text-xs font-medium text-gray-600 mb-1.5">
+                  Date de publication
+                </label>
+                <input
+                  type="datetime-local"
+                  name="published_at"
+                  value={publishedAt}
+                  onChange={(e) => setPublishedAt(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                />
+                <p className="text-[11px] text-gray-400 mt-1.5">
+                  Une date future planifie l&apos;article : il reste masqué sur le site jusqu&apos;à cette date.
+                </p>
+              </div>
+            )}
 
             <button
               type="submit"
