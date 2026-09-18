@@ -38,21 +38,38 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   }, [items.length])
 
   const slide = items[current]
+  const hasImage = Boolean(slide.image_url)
 
   return (
     <section
       className="w-full relative overflow-hidden"
       style={{ height: '300px', background: slide.bg_gradient, transition: 'background 0.6s ease' }}
     >
-      <div className="max-w-7xl mx-auto px-8 h-full flex items-center">
+      {hasImage && (
+        <div className="absolute inset-0 lg:hidden">
+          <Image
+            src={slide.image_url as string}
+            alt={slide.image_alt}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority={current === 0}
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+      )}
+
+      <div className="max-w-7xl mx-auto px-8 h-full flex items-center relative z-10">
         <div className="max-w-xl mx-auto text-center lg:mx-0 lg:text-left">
           <h1
-            className="text-3xl lg:text-4xl font-bold mb-3 leading-tight"
-            style={{ color: slide.accent_color }}
+            className={`text-3xl lg:text-4xl font-bold mb-3 leading-tight ${hasImage ? 'text-white lg:[color:var(--accent)]' : ''}`}
+            style={hasImage ? ({ '--accent': slide.accent_color } as React.CSSProperties) : { color: slide.accent_color }}
           >
             {slide.title}
           </h1>
-          <p className="text-gray-600 text-base mb-6">{slide.subtitle}</p>
+          <p className={`text-base mb-6 ${hasImage ? 'text-white/90 lg:text-gray-600' : 'text-gray-600'}`}>
+            {slide.subtitle}
+          </p>
           <a
             href={slide.cta_href}
             className="inline-flex items-center gap-2 text-white text-sm font-bold px-6 py-3 rounded transition-opacity hover:opacity-90"
