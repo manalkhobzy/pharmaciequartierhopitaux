@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Pharmacie & Para Quartier des Hôpitaux — Casablanca",
+    default: "Pharmacie & Para Quartier des Hôpitaux à Casablanca",
     template: "%s | Pharmacie & Para Quartier des Hôpitaux",
   },
   description:
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "fr_MA",
     type: "website",
     siteName: "Pharmacie & Para Quartier des Hôpitaux",
-    title: "Pharmacie & Para Quartier des Hôpitaux — Casablanca",
+    title: "Pharmacie & Para Quartier des Hôpitaux à Casablanca",
     description:
       "Pharmacie moderne au 279 Bd Abdelmoumen Casablanca. Parapharmacie en libre accès, ordonnance WhatsApp.",
   },

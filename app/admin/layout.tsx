@@ -11,7 +11,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Pas d'utilisateur → le middleware redirige déjà vers /admin/login
+  // Pas d'utilisateur → le proxy redirige déjà vers /admin/login
   // On rend juste les children (page login) sans la sidebar pour éviter la boucle
   if (!user) {
     return <>{children}</>

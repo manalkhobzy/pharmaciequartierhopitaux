@@ -73,7 +73,7 @@ function WelcomeSection() {
         <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Bienvenue dans notre pharmacie</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="rounded-lg overflow-hidden">
-            <Image src="/images/pharmacie.webp" alt="Pharmacie & Para Quartier des Hôpitaux — Casablanca" width={600} height={400} className="w-full h-auto" />
+            <Image src="/images/pharmacie.webp" alt="Pharmacie & Para Quartier des Hôpitaux à Casablanca" width={600} height={400} className="w-full h-auto" />
           </div>
           <div className="text-gray-700 text-sm leading-relaxed space-y-3 text-justify">
             <p className="font-bold text-gray-900">Bienvenue à la Pharmacie & Para Quartier des Hôpitaux !</p>
