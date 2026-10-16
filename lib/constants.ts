@@ -7,8 +7,8 @@ export const PHARMACIE = {
   telephoneLink: "+212522860654",
   // WhatsApp : SEULE source du numéro sur tout le site. Pour basculer sur la ligne
   // dédiée de la pharmacie, modifier uniquement ces 2 lignes.
-  whatsapp: "212653468785",
-  whatsappDisplay: "06 53 46 87 85",
+  whatsapp: "212627907121",
+  whatsappDisplay: "06 27 90 71 21",
   email: "",
   instagram: "pharmaquartierdeshopitaux",
   instagramUrl: "https://instagram.com/pharmaquartierdeshopitaux",

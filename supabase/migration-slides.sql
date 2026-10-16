@@ -47,7 +47,7 @@ VALUES
     'Votre ordonnance prête en 1h',
     'Envoyez-la sur WhatsApp, passez la récupérer.',
     'Envoyer mon ordonnance',
-    'https://wa.me/212653468785',
+    'https://wa.me/212627907121',
     '#2E7D32',
     'linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)',
     '/images/hero/ordonnance.webp',
